@@ -11,9 +11,9 @@ import org.mockito.Mockito;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TravelFeesSteps {
+public class CalculateTravelFeesSteps {
 
-    private Destination destination=new Destination();
+    private Destination destination = new Destination();
     private TravelFeesRepositoryPort travelFeesRepository;
     private TravelPriceComputor travelPriceComputor;
 
@@ -21,8 +21,8 @@ public class TravelFeesSteps {
 
     @Before
     public void setup() {
-        travelFeesRepository=Mockito.mock(TravelFeesRepositoryPort.class);
-        travelPriceComputor=Mockito.spy(new TravelPriceComputor(travelFeesRepository));
+        travelFeesRepository = Mockito.mock(TravelFeesRepositoryPort.class);
+        travelPriceComputor = Mockito.spy(new TravelPriceComputor(travelFeesRepository));
     }
 
     @Given("^the customer want to travel to \"([^\"]*)\"$")
