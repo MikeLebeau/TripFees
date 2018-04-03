@@ -13,7 +13,7 @@ public class TravelPriceComputor implements PriceComputor{
         this.travelFeesRepository = travelFeesRepository;
     }
 
-    public Integer computeTravelPrice(final Destination destination) {
+    public Integer calculatePrice(final Destination destination) {
         checkDestination(destination);
         return travelFeesRepository.getAgencyFeesByDestination(destination) + travelFeesRepository.getTravelFeesByDestination(destination);
     }

@@ -16,5 +16,5 @@ import org.junit.runner.RunWith;
                 "tzatziki.analysis.exec.gson.JsonEmitterReport:target/"+ PdfSimpleReport.TRIP_FEES
         }
 )
-public class BDDRunnerTest {
+public class BDDRunner {
 }

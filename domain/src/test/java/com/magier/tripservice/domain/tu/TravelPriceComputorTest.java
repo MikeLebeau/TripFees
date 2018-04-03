@@ -22,7 +22,7 @@ public class TravelPriceComputorTest {
 
     @Test
     public void computeTravelPrice_should_return_an_invalid_argument_exception_if_destination_is_null() {
-        assertThatThrownBy(() -> travelPriceComputor.computeTravelPrice(null))
+        assertThatThrownBy(() -> travelPriceComputor.calculatePrice(null))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }
