@@ -17,15 +17,15 @@ public class TripResource {
 
     private final PriceComputorDriverPort priceComputorDriverPort;
 
-    public TripResource(final PriceComputorDriverPort travelCostCalculatorDriver) {
-        this.priceComputorDriverPort=travelCostCalculatorDriver;
+    public TripResource(final PriceComputorDriverPort priceComputorDriverPort) {
+        this.priceComputorDriverPort = priceComputorDriverPort;
     }
 
     @ApiOperation(value="Compute travel fees", notes="Returns the price of a trip")
     @RequestMapping(value={"/trip/{destination}"}, method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Integer> computeFees(
             @PathVariable(value="destination") String destinationName) {
-        Integer travelPrice=priceComputorDriverPort.computeTravelPrice(destinationName);
+        Integer travelPrice = priceComputorDriverPort.computeTravelPrice(destinationName);
         return new ResponseEntity<>(travelPrice, HttpStatus.OK);
     }
 }

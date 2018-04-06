@@ -1,5 +1,5 @@
 package com.magier.tripservice.domain;
 
-public interface PriceComputor {
+public interface Priceable {
     Integer calculatePrice(final Destination destination);
 }

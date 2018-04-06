@@ -65,12 +65,12 @@
             <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--dependency>
+        <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
             <version>${liquibase-core.version}</version>
             <scope>test</scope>
-        </dependency-->
+        </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>

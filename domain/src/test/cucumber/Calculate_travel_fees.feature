@@ -6,8 +6,8 @@ Feature: as a travel agency, I want to calculate travel fees depending on the de
     Given the customer want to travel to <destination>
     And the travel fees are <travelFees>€
     And the agency fees are <agencyFees>€
-    When the system calculate the travel fees
-    Then the travel price is <travelPrice>€
+    When the system calculate the trip price
+    Then the trip price is <travelPrice>€
 
     Examples:
       | destination | travelFees | agencyFees | travelPrice |
