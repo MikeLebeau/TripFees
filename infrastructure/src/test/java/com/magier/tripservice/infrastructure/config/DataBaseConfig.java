@@ -1,13 +1,12 @@
 package com.magier.tripservice.infrastructure.config;
 
-
-import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 
@@ -27,17 +26,15 @@ public class DataBaseConfig {
     private String password;
 
 
-
     @Bean
-    //@ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
-        return new org.apache.tomcat.jdbc.pool.DataSource();
-    }
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(jdbcURl);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
 
-    @Bean
-    public JdbcTemplate jdbcTemplate(DataSource dataSource)
-    {
-        return new JdbcTemplate(dataSource);
+        return dataSource;
     }
 
     @Bean
@@ -46,10 +43,8 @@ public class DataBaseConfig {
     }
 
     @Bean
-    public SpringLiquibase liquibase() {
-        SpringLiquibase liquibase = new SpringLiquibase();
-        liquibase.setChangeLog("classpath:db/changelog/db.changelog-master.yaml");
-        liquibase.setDataSource(dataSource());
-        return liquibase;
+    public JdbcTemplate jdbcTemplate(DataSource dataSource)
+    {
+        return new JdbcTemplate(dataSource);
     }
 }

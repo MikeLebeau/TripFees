@@ -71,7 +71,7 @@ public class LiquibaseHelper {
         if (optLiquibase.isPresent()) {
             final Liquibase liquibase = optLiquibase.get();
             try {
-                liquibase.rollback(1000, null);
+                liquibase.dropAll();
                 liquibase.getDatabase().close();
             } catch (final LiquibaseException e) {
                 throw new RuntimeException(e.getMessage(), e);

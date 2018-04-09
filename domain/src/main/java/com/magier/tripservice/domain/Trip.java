@@ -1,10 +1,12 @@
 package com.magier.tripservice.domain;
 
+import java.util.Objects;
+
 public class Trip {
 
-    Destination destination;
-    Integer agencyFees;
-    Integer travelFees;
+    private Destination destination;
+    private Integer agencyFees;
+    private Integer travelFees;
 
     public Trip() {
     }
@@ -13,6 +15,22 @@ public class Trip {
         this.destination = destination;
         this.agencyFees = agencyFees;
         this.travelFees = travelFees;
+    }
+
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        Trip otherTrip = (Trip) other;
+        return Objects.equals(destination, otherTrip.destination) &&
+                Objects.equals(agencyFees, otherTrip.agencyFees) &&
+                Objects.equals(travelFees, otherTrip.travelFees);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(destination, agencyFees, travelFees);
     }
 
     public Destination destination() {
