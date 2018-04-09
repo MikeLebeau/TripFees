@@ -1,1 +1,5 @@
-INSERT INTO customer (uuid, firstname, lastname, email) VALUES ('e87f0b7f-945b-495d-aa5b-944c3d44242c', 'Lance', 'ARMSTRONG', 'lance.armstrong.gmail.com');
+INSERT INTO DESTINATION (NAME) VALUES ('Paris');
+INSERT INTO DESTINATION (NAME) VALUES ('Lille');
+INSERT INTO DESTINATION (NAME) VALUES ('Beijing');
+INSERT INTO DESTINATION (NAME) VALUES ('New-york');
+INSERT INTO DESTINATION (NAME) VALUES ('New-Tokyo');

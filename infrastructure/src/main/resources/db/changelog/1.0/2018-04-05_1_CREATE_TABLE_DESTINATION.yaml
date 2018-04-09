@@ -4,27 +4,12 @@ databaseChangeLog:
       author: dan
       changes:
         - createTable:
-            tableName: customer
+            tableName: destination
             columns:
               - column:
-                  name: uuid
-                  type: uuid
+                  name: name
+                  type: varchar(255)
                   constraints:
                     primaryKey: true
                     nullable: false
                     unique: true
-              - column:
-                  name: firstname
-                  type: varchar(255)
-                  constraints:
-                    nullable: true
-              - column:
-                  name: lastname
-                  type: varchar(255)
-                  constraints:
-                    nullable: true
-              - column:
-                  name: email
-                  type: varchar(255)
-                  constraints:
-                    nullable: true

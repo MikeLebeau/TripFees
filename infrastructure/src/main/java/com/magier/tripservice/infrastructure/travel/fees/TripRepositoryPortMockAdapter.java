@@ -7,7 +7,7 @@ import com.magier.tripservice.domain.error.BusinessErrors;
 import com.magier.tripservice.domain.error.BusinessException;
 import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 public class TripRepositoryPortMockAdapter implements TripRepositoryPort {
 
     @Override
