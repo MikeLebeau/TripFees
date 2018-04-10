@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class TravelPricer implements Priceable {
+public class TravelPricer implements PriceComputorDriverPort {
 
     private TripRepositoryPort tripRepository;
 
@@ -13,7 +13,8 @@ public class TravelPricer implements Priceable {
         this.tripRepository = tripRepository;
     }
 
-    public Integer calculatePrice(final Destination destination) {
+    @Override
+    public Integer computeTravelPrice(final Destination destination) {
         checkDestination(destination);
 
         Trip trip = tripRepository.findTripByDestination(destination);
