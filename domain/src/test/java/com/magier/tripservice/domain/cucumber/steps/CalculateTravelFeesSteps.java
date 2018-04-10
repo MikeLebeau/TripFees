@@ -46,7 +46,7 @@ public class CalculateTravelFeesSteps {
 
     @When("^the system calculate the trip price")
     public void the_system_calculate_the_trip_price() {
-        computedPrice = travelPricer.calculatePrice(destination);
+        computedPrice = travelPricer.computeTravelPrice(destination);
     }
 
     @Then("^the trip price is (\\d+)€$")
