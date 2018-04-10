@@ -17,8 +17,6 @@
 
     <modules>
         <module>domain</module>
-        <module>infrastructure</module>
-        <module>exposition</module>
     </modules>
 
     <properties>
