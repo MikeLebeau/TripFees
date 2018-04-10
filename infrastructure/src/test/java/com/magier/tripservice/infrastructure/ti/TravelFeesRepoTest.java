@@ -33,13 +33,13 @@ public class TravelFeesRepoTest {
     private Optional<Liquibase> liquibase;
 
     @Before
-    public void _setUp() throws Exception {
+    public void _setUp() {
         liquibase = LiquibaseHelper.loadData(dataSource,
               "db/changelog/db.changelog-master.yaml");
     }
 
    @After
-    public void _tearDown() throws Exception
+    public void _tearDown()
     {
         LiquibaseHelper.rollbackAndClose(liquibase);
     }

@@ -1,4 +1,4 @@
-package com.magier.tripservice.infrastructure.travel.fees;
+package com.magier.tripservice.infrastructure.travel.fees.jdbctemplate;
 
 import com.magier.tripservice.domain.Destination;
 import com.magier.tripservice.domain.Trip;
@@ -22,6 +22,7 @@ public class TripRepositoryJdbcTemplateAdapter implements TripRepositoryPort {
     public Trip findTripByDestination(Destination destination) {
         String sql = "SELECT destination, agency_fees, travel_fees FROM trip WHERE destination = ?";
         RowMapper<Trip> rowMapper = new TripRowMapper();
+        // Update this part in case there is no destination in db
         return jdbcTemplate.queryForObject(sql, rowMapper, destination.getName());
     }
 }

@@ -1,4 +1,4 @@
-package com.magier.tripservice.infrastructure.travel.fees;
+package com.magier.tripservice.infrastructure.travel.fees.mock;
 
 import com.magier.tripservice.domain.Destination;
 import com.magier.tripservice.domain.Trip;

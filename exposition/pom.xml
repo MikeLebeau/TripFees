@@ -45,22 +45,16 @@
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
-
-        <!--dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-        </dependency-->
-
         <!-- swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
+            <version>${springfox-swagger.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>${swagger-ui.version}</version>
+            <version>${springfox-swagger.version}</version>
         </dependency>
 
         <!--tests-->

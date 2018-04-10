@@ -22,8 +22,8 @@ public class TripResource {
     }
 
     @ApiOperation(value="Compute travel fees", notes="Returns the price of a trip")
-    @RequestMapping(value={"/trip/{destination}"}, method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Integer> computeFees(
+    @RequestMapping(value={"/trip/{destination}/calculateTripPrice"}, method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Integer> calculateTripPrice(
             @PathVariable(value="destination") String destinationName) {
         Integer travelPrice = priceComputorDriverPort.computeTravelPrice(destinationName);
         return new ResponseEntity<>(travelPrice, HttpStatus.OK);
